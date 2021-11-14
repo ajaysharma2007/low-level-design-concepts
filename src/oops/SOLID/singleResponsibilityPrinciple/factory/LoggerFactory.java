@@ -1,9 +1,7 @@
 package oops.SOLID.singleResponsibilityPrinciple.factory;
 
-import oops.SOLID.singleResponsibilityPrinciple.logger.ConsoleLogger;
+import oops.SOLID.singleResponsibilityPrinciple.logger.impl.ConsoleLogger;
 import oops.SOLID.singleResponsibilityPrinciple.logger.Logger;
-import oops.SOLID.singleResponsibilityPrinciple.repository.EmployeeRepository;
-import oops.SOLID.singleResponsibilityPrinciple.repository.StringEmployeeRepository;
 
 public class LoggerFactory {
     private static Logger logger;

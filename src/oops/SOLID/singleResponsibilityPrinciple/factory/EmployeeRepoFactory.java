@@ -1,7 +1,7 @@
 package oops.SOLID.singleResponsibilityPrinciple.factory;
 
 import oops.SOLID.singleResponsibilityPrinciple.repository.EmployeeRepository;
-import oops.SOLID.singleResponsibilityPrinciple.repository.StringEmployeeRepository;
+import oops.SOLID.singleResponsibilityPrinciple.repository.impl.StringEmployeeRepository;
 
 public class EmployeeRepoFactory {
     private  static  EmployeeRepository employeeRepository;

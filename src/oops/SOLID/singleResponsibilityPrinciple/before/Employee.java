@@ -1,6 +1,6 @@
 package oops.SOLID.singleResponsibilityPrinciple.before;
 
-import oops.SOLID.singleResponsibilityPrinciple.repository.StringEmployeeRepository;
+import oops.SOLID.singleResponsibilityPrinciple.repository.impl.StringEmployeeRepository;
 import oops.SOLID.singleResponsibilityPrinciple.serializer.EmployeeSerializer;
 
 import java.nio.file.Path;

@@ -1,8 +1,9 @@
-package oops.SOLID.singleResponsibilityPrinciple.repository;
+package oops.SOLID.singleResponsibilityPrinciple.repository.impl;
 
 import oops.SOLID.singleResponsibilityPrinciple.before.Employee;
 import oops.SOLID.singleResponsibilityPrinciple.before.FullTimeEmployee;
 import oops.SOLID.singleResponsibilityPrinciple.before.PartTimeEmployee;
+import oops.SOLID.singleResponsibilityPrinciple.repository.EmployeeRepository;
 
 import java.io.IOException;
 import java.nio.file.Files;

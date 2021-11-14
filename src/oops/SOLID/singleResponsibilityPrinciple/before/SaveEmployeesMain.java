@@ -2,10 +2,8 @@ package oops.SOLID.singleResponsibilityPrinciple.before;
 
 import oops.SOLID.singleResponsibilityPrinciple.factory.EmployeeRepoFactory;
 import oops.SOLID.singleResponsibilityPrinciple.factory.LoggerFactory;
-import oops.SOLID.singleResponsibilityPrinciple.logger.ConsoleLogger;
 import oops.SOLID.singleResponsibilityPrinciple.logger.Logger;
 import oops.SOLID.singleResponsibilityPrinciple.repository.EmployeeRepository;
-import oops.SOLID.singleResponsibilityPrinciple.repository.StringEmployeeRepository;
 
 import java.io.IOException;
 import java.util.List;

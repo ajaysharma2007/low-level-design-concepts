@@ -1,6 +1,7 @@
-package oops.SOLID.singleResponsibilityPrinciple.serializer;
+package oops.SOLID.singleResponsibilityPrinciple.serializer.impl;
 
 import oops.SOLID.singleResponsibilityPrinciple.before.Employee;
+import oops.SOLID.singleResponsibilityPrinciple.serializer.EmployeeSerializer;
 
 import java.io.Serializable;
 
