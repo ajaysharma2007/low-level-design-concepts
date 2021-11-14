@@ -1,5 +1,6 @@
 package oops.SOLID.singleResponsibilityPrinciple.before;
 
+import oops.SOLID.singleResponsibilityPrinciple.repository.StringEmployeeRepository;
 import oops.SOLID.singleResponsibilityPrinciple.serializer.EmployeeSerializer;
 
 import java.nio.file.Path;
@@ -15,7 +16,7 @@ public abstract class Employee {
     private int nbHoursPerWeek;
 
     private EmployeeSerializer employeeSerializer;
-    private EmployeeRepository employeeRepository;
+    private StringEmployeeRepository employeeRepository;
 
     public Employee(String fullName, int monthlyIncome) {
         setMonthlyIncome(monthlyIncome);
@@ -74,11 +75,6 @@ public abstract class Employee {
         return Paths.get(this.getFullName().replace(" ", "_") + ".rec");
     }
 
-    public void save() {
-        String savedMessage = employeeRepository.save(this);
-        System.out.println(savedMessage);
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -99,7 +95,7 @@ public abstract class Employee {
         this.employeeSerializer = employeeSerializer;
     }
 
-    public void setEmployeeRepository(EmployeeRepository employeeRepository) {
+    public void setEmployeeRepository(StringEmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 }

@@ -1,16 +1,31 @@
 package oops.SOLID.singleResponsibilityPrinciple.before;
 
+import oops.SOLID.singleResponsibilityPrinciple.factory.EmployeeRepoFactory;
+import oops.SOLID.singleResponsibilityPrinciple.factory.LoggerFactory;
+import oops.SOLID.singleResponsibilityPrinciple.logger.ConsoleLogger;
+import oops.SOLID.singleResponsibilityPrinciple.logger.Logger;
+import oops.SOLID.singleResponsibilityPrinciple.repository.EmployeeRepository;
+import oops.SOLID.singleResponsibilityPrinciple.repository.StringEmployeeRepository;
+
+import java.io.IOException;
 import java.util.List;
 
 public class SaveEmployeesMain {
-    public static void main(String[] args) {
-        // Grab employees
-        EmployeeRepository repository = new EmployeeRepository();
-        List<Employee> employees = repository.findAll();
+    private static EmployeeRepository employeeRepository;
+    private static Logger logger;
 
-        // Save all
-        for (Employee e : employees){
-            e.save();
+    public static void main(String[] args) {
+        employeeRepository = EmployeeRepoFactory.getInstance("String");
+        logger = LoggerFactory.getInstance("Console");
+        List<Employee> employees = employeeRepository.findAll();
+        for (Employee employee : employees){
+            try {
+                employeeRepository.save(employee);
+                logger.writeInfo("Saved employee : " + employee.toString() );
+            } catch (IOException e) {
+                logger.writeError("Failed to save employee : " + employee.toString());
+                e.printStackTrace();
+            }
         }
     }
 }

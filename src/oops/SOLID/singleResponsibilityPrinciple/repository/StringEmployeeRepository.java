@@ -1,12 +1,17 @@
-package oops.SOLID.singleResponsibilityPrinciple.before;
+package oops.SOLID.singleResponsibilityPrinciple.repository;
+
+import oops.SOLID.singleResponsibilityPrinciple.before.Employee;
+import oops.SOLID.singleResponsibilityPrinciple.before.FullTimeEmployee;
+import oops.SOLID.singleResponsibilityPrinciple.before.PartTimeEmployee;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
 
-public class EmployeeRepository {
+public class StringEmployeeRepository implements EmployeeRepository {
 
+    @Override
     public List<Employee> findAll() {
 
         // Employees are kept in memory for simplicity
@@ -19,16 +24,10 @@ public class EmployeeRepository {
         return Arrays.asList(anna, billy, steve, magda);
     }
 
-    public String save(Employee employee) {
+    @Override
+    public void save(Employee employee) throws IOException {
         StringBuilder serializedEmp = employee.serialize();
         String message = "Saved employee successfully : " + employee.toString();
-        try {
-            Files.write(employee.getSavePath(), serializedEmp.toString().getBytes());
-        } catch (IOException e) {
-            message = "Failed to save employee  : " + employee.toString();
-            e.printStackTrace();
-        }
-
-        return message;
+        Files.write(employee.getSavePath(), serializedEmp.toString().getBytes());
     }
 }
