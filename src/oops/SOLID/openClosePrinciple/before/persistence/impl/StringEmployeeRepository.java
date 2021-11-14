@@ -14,8 +14,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class StringEmployeeRepository implements EmployeeRepository {
-    EmployeeSerializer employeeSerializer;
-
     @Override
     public List<Employee> findAll() {
 
@@ -32,7 +30,6 @@ public class StringEmployeeRepository implements EmployeeRepository {
     @Override
     public void save(Employee employee) throws IOException {
         StringBuilder serializedEmp = EmployeeSerializerFactory.getInstance("Hr").serialize(employee);
-        String message = "Saved employee successfully : " + employee.toString();
         Files.write(Paths.get(employee.getFullName().replace(" ", "_") + ".rec"), serializedEmp.toString().getBytes());
     }
 }
